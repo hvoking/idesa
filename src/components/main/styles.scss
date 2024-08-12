@@ -16,12 +16,6 @@
   padding-left: 14px;
   background-color: rgba(255, 255, 255, 1);
 }
-.search {
-  height: 95px;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  // background: linear-gradient(to bottom, rgb(219, 126, 76), rgb(229, 130, 22));
-}
 @media screen and (max-width: 1000px) {
   .main-wrapper {
     grid-template-columns: 1fr;

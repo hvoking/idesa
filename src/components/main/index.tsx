@@ -18,15 +18,7 @@ export const Main = () => {
 			<div className="header">
 				<img src={process.env.PUBLIC_URL + "/static/logos/idesa.svg"} alt="logo-idesa" height="40px"/>
 			</div>
-			<div className="search">
-				<div></div>
-				<div style={{display: "grid", gridTemplateColumns: "7fr 2fr 2fr"}}>
-					<Search/>
-					<div></div>
-					<div></div>
-				</div>
-				<div></div>
-			</div>
+			<Search/>
 			<div className="main-wrapper">
 				<Sidebar/>
 				<MapContainer/>

@@ -5,6 +5,7 @@ import { useState, useRef } from 'react';
 import { Suggestions } from './suggestions';
 import { SearchIcon } from './icon';
 import { Cross } from './cross';
+import { Filter } from './filter';
 import './styles.scss';
 
 // Context imports
@@ -95,27 +96,47 @@ export const Search = () => {
 	};
 
 	return (
-		<div className="search-wrapper">
-			<div className="idesa-search">
-				<SearchIcon/>
-				<input 
-					ref={inputRef}
-					className="maps-input"
-					type="text" 
-					placeholder="Buscar zona Ej.: Altos, Minga, etc"
-					value={searchText}
-					onChange={handleChange}
-					onKeyDown={handleKeyDown}
-					spellCheck={false}
-				/>
-				<Cross cleanSuggestions={cleanSuggestions}/>
-				{suggestionsActive && suggestions &&
-					<Suggestions 
-						suggestions={suggestions}
-						handleClick={handleClick}
+		<div className="search">
+			<div></div>
+			<div className="search-wrapper">
+				<div className="idesa-search">
+					<SearchIcon/>
+					<input 
+						ref={inputRef}
+						className="maps-input"
+						type="text" 
+						placeholder="Buscar zona Ej.: Altos, Minga, etc"
+						value={searchText}
+						onChange={handleChange}
+						onKeyDown={handleKeyDown}
+						spellCheck={false}
 					/>
-				}
+					<Cross cleanSuggestions={cleanSuggestions}/>
+					{suggestionsActive && suggestions &&
+						<Suggestions 
+							suggestions={suggestions}
+							handleClick={handleClick}
+						/>
+					}
+				</div>
+				<div className="search-cta">
+					BUSCAR
+				</div>
+				<div 
+					style={{
+						display: "grid", 
+						gridTemplateColumns: "min-content auto", 
+						fontSize: "1.2em", 
+						alignItems: "center", 
+						textAlign: "center",
+						color: "rgba(126, 126, 132, 1)"
+					}}
+				>
+					<Filter/>
+					<div>FILTRAR</div>
+				</div>
 			</div>
+			<div></div>
 		</div>
 	)
 }
