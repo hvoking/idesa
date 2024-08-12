@@ -1,0 +1,30 @@
+.wrapper {
+  display: grid;
+  grid-template-rows: min-content min-content auto;
+  height: calc(var(--vh, 1vh) * 100);
+  background-image: url('./idesa.jpg');
+  background-size: cover;
+}
+.main-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.header {
+  height: 65px;
+  display: grid;
+  align-items: center;
+  padding-left: 14px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.search {
+  height: 95px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  // background: linear-gradient(to bottom, rgb(219, 126, 76), rgb(229, 130, 22));
+}
+@media screen and (max-width: 1000px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr;
+  } 
+}
