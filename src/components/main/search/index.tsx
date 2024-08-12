@@ -122,16 +122,7 @@ export const Search = () => {
 				<div className="search-cta">
 					BUSCAR
 				</div>
-				<div 
-					style={{
-						display: "grid", 
-						gridTemplateColumns: "min-content auto", 
-						fontSize: "1.2em", 
-						alignItems: "center", 
-						textAlign: "center",
-						color: "rgba(126, 126, 132, 1)"
-					}}
-				>
+				<div className="filter-wrapper">
 					<Filter/>
 					<div>FILTRAR</div>
 				</div>

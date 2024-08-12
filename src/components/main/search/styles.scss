@@ -8,6 +8,8 @@
   background-color: rgba(255, 255, 255, 1);
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  padding-right: 10px;
+  padding-left: 10px;
   align-self: center;
   display: grid;
   grid-template-columns: 7fr 2fr 2fr;
@@ -42,6 +44,17 @@
   background-color: rgba(235, 108, 65, 1);
   height: 40px;
   line-height: 40px;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+.filter-wrapper {
+  display: flex;
+  text-align: center; 
+  align-self: center; 
+  color: rgba(126, 126, 132, 1); 
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid rgba(126, 126, 132, 1);
   border-radius: 5px;
   font-size: 1.2em;
 }
