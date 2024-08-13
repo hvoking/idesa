@@ -41,7 +41,7 @@ export const MapContainer = () => {
 				preserveDrawingBuffer={true}
 			>
 				<CustomMarker 
-					filterProperties={propertyData}
+					propertyData={propertyData}
 					propertyInfo={propertyInfo}
 					currentId={currentId}
 					setCurrentId={setCurrentId}
