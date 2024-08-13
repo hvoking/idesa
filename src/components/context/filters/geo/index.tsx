@@ -3,6 +3,7 @@ import { useState, useEffect, useContext, createContext } from 'react';
 
 // App imports
 import * as Locations from './locations';
+import { cities } from './cities';
 
 const GeoContext: React.Context<any> = createContext(null)
 
@@ -27,7 +28,7 @@ export const GeoProvider = ({children}: any) => {
 			cityName, setCityName, 
 			placeCoordinates, setPlaceCoordinates,
 			viewport, setViewport,
-			Locations,
+			Locations, cities,
 			placeId, setPlaceId
 		}}>
 			{children}

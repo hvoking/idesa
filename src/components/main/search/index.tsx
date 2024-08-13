@@ -13,25 +13,32 @@ import { useGeo } from '../../context/filters/geo';
 import { useGoogleSearchApi } from '../../context/api/google/search';
 
 export const Search = () => {
-	const { setPlaceId } = useGeo();
-	const { googleSearchData, searchText, setSearchText } = useGoogleSearchApi();
+	const { setCityName, Locations, cities, setPlaceCoordinates } = useGeo();
+
+	const [ searchText, setSearchText ] = useState<any>("");
+	const [ suggestions, setSuggestions ] = useState<any>([]);
 
 	const [ suggestionIndex, setSuggestionIndex ] = useState(0);
 	const [ suggestionsActive, setSuggestionsActive ]= useState(false);
 	
 	const inputRef = useRef<any>(null);
 
-	const suggestions = googleSearchData && googleSearchData.predictions.reduce((total: any, item: any) => {
-		const placeName = item.description.toLowerCase()
-		total.push(placeName)
-		return total
-	}, []);
+	const onFocus = () => {
+		setSuggestions(Object.keys(cities));
+		setSuggestionsActive(true);
+	}
 
 	const handleChange = (e: any) => {
-		const query = e.target.value;
+		const query = e.target.value.toLowerCase();
 		setSearchText(query);
-
 		if (query.length > 0) {
+			const filterSuggestions: any = Object.keys(cities).filter((suggestion: any) => 
+				{
+					const currentSuggestion = suggestion.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
+					return currentSuggestion.indexOf(query) > -1
+				}
+			)
+			setSuggestions(filterSuggestions);
 			setSuggestionsActive(true);
 		}
 		else {
@@ -56,14 +63,21 @@ export const Search = () => {
 		}
 		// enter
 		else if (e.keyCode === 13) {
-			const currentSearchValue: any = suggestions && suggestions[suggestionIndex]
-			getCurrentPrediction(currentSearchValue)
-			currentSearchValue && setSearchText(currentSearchValue);
+			const cityValue: string = suggestions[suggestionIndex]
+			setSearchText(cityValue);
 			setSuggestionIndex(0);
 			setSuggestionsActive(false);
-		}
 
-		// scape
+			const cityName = cities[cityValue];
+			setCityName(cityName);
+			
+			const selectedCity: any = Locations[cityName];
+			setPlaceCoordinates({ 
+				longitude: selectedCity.longitude, 
+				latitude: selectedCity.latitude 
+			});
+		}
+		// escape
 		else if (e.keyCode === 27) {
 			setSearchText("");
 			setSuggestionIndex(0);
@@ -71,28 +85,26 @@ export const Search = () => {
 		}
 	};
 
-
 	const cleanSuggestions = () => {
 		setSearchText("");
 		setSuggestionIndex(0);
 		setSuggestionsActive(false);
 	}
 
-	const getCurrentPrediction = (currentSearchValue: any) => {
-		googleSearchData && googleSearchData.predictions.filter((item: any) => {
-			const placeName = item.description.toLowerCase().trim();
-			console.log(currentSearchValue)
-			if (placeName === currentSearchValue) {
-				setPlaceId(item.place_id);
-			}
-		})
-	}
+	const handleClick = (e: any, suggestion: any) => {
+		setSuggestions([]);
+		setSearchText(suggestion)
+		
+		setSuggestionsActive(false)
 
-	const handleClick = (e: any) => {
-		const currentSearchValue = e.target.innerText.trim();
-		getCurrentPrediction(currentSearchValue)
-		setSearchText(currentSearchValue);
-		setSuggestionsActive(false);
+		const cityName = cities[suggestion];
+		const selectedCity: any = Locations[cityName];
+
+		setCityName(cityName);
+		setPlaceCoordinates({ 
+			longitude: selectedCity.longitude, 
+			latitude: selectedCity.latitude 
+		});
 	};
 
 	return (
@@ -110,6 +122,7 @@ export const Search = () => {
 						onChange={handleChange}
 						onKeyDown={handleKeyDown}
 						spellCheck={false}
+						onFocus={onFocus}
 					/>
 					<Cross cleanSuggestions={cleanSuggestions}/>
 					{suggestionsActive && suggestions &&
@@ -122,10 +135,7 @@ export const Search = () => {
 				<div className="search-cta">
 					BUSCAR
 				</div>
-				<div className="filter-wrapper">
-					<Filter/>
-					<div>FILTRAR</div>
-				</div>
+				<Filter/>
 			</div>
 			<div></div>
 		</div>
