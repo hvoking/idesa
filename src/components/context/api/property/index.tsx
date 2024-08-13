@@ -14,9 +14,19 @@ export const usePropertyApi = () => {
 
 export const PropertyApiProvider = ({children}: any) => {
 	const [ currentId, setCurrentId ] = useState<any>(null);
+	const [ samplesIds, setSamplesIds ] = useState<any>([]);
+	const [ rejectedIds, setRejectedIds ] = useState<any>([]);
+
+	const [ sortKey, setSortKey ] = useState("nombre");
 
 	return (
-		<PropertyApiContext.Provider value={{ propertyData, currentId, setCurrentId }}>
+		<PropertyApiContext.Provider value={{ 
+			propertyData, 
+			currentId, setCurrentId,
+			samplesIds, setSamplesIds,
+			rejectedIds, setRejectedIds,
+			sortKey, setSortKey,
+		}}>
 			{children}
 		</PropertyApiContext.Provider>
 	)

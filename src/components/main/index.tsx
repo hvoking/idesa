@@ -1,6 +1,6 @@
 // App imports
 import { MapContainer } from './maps';
-import { Sidebar } from './sidebar';
+import { Left } from './left';
 import { Search } from './search';
 import './styles.scss';
 
@@ -20,7 +20,7 @@ export const Main = () => {
 			</div>
 			<Search/>
 			<div className="main-wrapper">
-				<Sidebar/>
+				<Left/>
 				<MapContainer/>
 			</div>
 		</div>

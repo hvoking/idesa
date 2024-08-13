@@ -2,12 +2,13 @@
   display: grid;
   grid-template-rows: min-content min-content auto;
   height: calc(var(--vh, 1vh) * 100);
-  background-image: url('./idesa.jpg');
-  background-size: cover;
+  // background-image: url('./idesa.jpg');
+  // background-size: cover;
 }
 .main-wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  overflow: hidden;
 }
 .header {
   height: 65px;
