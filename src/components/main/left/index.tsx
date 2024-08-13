@@ -1,6 +1,6 @@
 // App imports
 import { Sort } from './sort';
-import { Anuncios } from './anuncios'
+import { Parcels } from './parcels'
 import './styles.scss';
 
 export const Left = () => {
@@ -8,7 +8,7 @@ export const Left = () => {
 		<div className="left">
 			<div className="left-title">Fracciones</div>
 			<Sort/>
-			<Anuncios/>
+			<Parcels/>
 		</div>
 	)
 }

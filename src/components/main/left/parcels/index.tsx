@@ -5,7 +5,7 @@ import './styles.scss';
 // Context imports
 import { usePropertyApi } from '../../../context/api/property';
 
-export const Anuncios = () => {
+export const Parcels = () => {
 	const { currentId, setCurrentId, propertyData, setRejectedIds } = usePropertyApi();
 
 	return (
@@ -15,11 +15,6 @@ export const Anuncios = () => {
 					<div 
 						key={index} 
 						className="pictures-box"
-						style={{
-							border: currentId === item.id ? 
-							"2px solid rgba(8, 18, 69, 1)" : 
-							"2px solid rgba(0, 0, 0, 0)",
-						}}
 					>
 						<Description item={item} setCurrentId={setCurrentId} setRejectedIds={setRejectedIds}/>
 					</div>
@@ -29,4 +24,4 @@ export const Anuncios = () => {
 	)
 }
 
-Anuncios.displayName="Anuncios";
+Parcels.displayName="Parcels";
