@@ -1,10 +1,18 @@
 .popup-wrapper {
   background-color: rgba(255, 255, 255, 1); 
-  border-radius: 5px;
+  border-radius: 10px;
   display: grid;
   padding: 20px;
   white-space: nowrap;
   width: min-content;
+  height: 250px;
+  position: relative;
+}
+.search-cross {
+  width: 13px;
+  cursor: pointer;
+  padding-right: 10px;
+  padding-top: 3px;
 }
 .mapboxgl-popup-content {
   padding: 0 !important;
