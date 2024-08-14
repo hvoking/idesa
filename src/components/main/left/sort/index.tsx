@@ -11,7 +11,7 @@ import { usePropertyApi } from '../../../context/api/property';
 
 export const Sort = () => {
 	const [ suggestionsActive, setSuggestionsActive ] = useState(false);
-	const { sortKey, setSortKey } = usePropertyApi();
+	const { sortKey, setSortKey, setSortOrder } = usePropertyApi();
 
 	const suggestions = [
 		"Nombre",
@@ -21,9 +21,27 @@ export const Sort = () => {
 		"Lotes disponibles mayor a menor"
 	]
 
+	const sortOptions: any = {
+		"Nombre": "nombre",
+		"Precio menor a mayor": "desde",
+		"Precio mayor a menor": "desde",
+		"Lotes disponibles menor a mayor": "disponibles",
+		"Lotes disponibles mayor a menor": "disponibles"
+	}
+
+
+	const sortDirections: any = {
+	  "Nombre": "asc",
+	  "Precio menor a mayor": "desc",
+	  "Precio mayor a menor": "asc",
+	  "Lotes disponibles menor a mayor": "asc",
+	  "Lotes disponibles mayor a menor": "desc"
+	};
+
 	const onClick = (e: any) => {
 		const currentValue = e.target.innerText;	
-		setSortKey(currentValue)
+		setSortKey(sortOptions[currentValue]);
+		setSortOrder(sortDirections[currentValue]);
 	}
 
 	return (

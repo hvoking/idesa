@@ -18,6 +18,7 @@ export const PropertyApiProvider = ({children}: any) => {
 	const [ rejectedIds, setRejectedIds ] = useState<any>([]);
 
 	const [ sortKey, setSortKey ] = useState("nombre");
+	const [ sortOrder, setSortOrder ] = useState("asc");
 
 	return (
 		<PropertyApiContext.Provider value={{ 
@@ -26,6 +27,7 @@ export const PropertyApiProvider = ({children}: any) => {
 			samplesIds, setSamplesIds,
 			rejectedIds, setRejectedIds,
 			sortKey, setSortKey,
+			sortOrder, setSortOrder,
 		}}>
 			{children}
 		</PropertyApiContext.Provider>
