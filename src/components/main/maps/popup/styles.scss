@@ -1,0 +1,28 @@
+.tooltip-wrapper {
+  cursor: pointer;
+  display: grid;
+  overflow: hidden;
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0;
+}
+.card-thumbnail {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.card-thumbnail-description {
+  background-color: rgba(255, 255, 255, 1); 
+  border-radius: 0 0 10px 10px;
+  display: grid;
+  color: rgba(0, 0, 0, 1);
+  grid-template-rows: min-content;
+  padding: 10px
+}
+.mapboxgl-popup-content {
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.mapboxgl-popup-close-button {
+  outline: none !important;
+}

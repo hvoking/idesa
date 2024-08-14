@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 
 // App imports
 import { CustomMarker } from './marker';
+import { CustomPopup } from './popup';
 import './styles.scss';
 
 // Context imports
@@ -47,6 +48,12 @@ export const MapContainer = () => {
 					setCurrentId={setCurrentId}
 					setPropertyInfo={setPropertyInfo}
 				/>
+				{propertyInfo && 
+					<CustomPopup 
+						marker={propertyInfo} 
+						setPropertyInfo={setPropertyInfo}
+					/>
+				}
 			</Map>
 		</div>
 	)

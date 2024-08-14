@@ -18,6 +18,9 @@
 @media screen and (max-width: 1000px) {
   .main-wrapper {
     grid-template-columns: 1fr;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
   } 
+  .left {
+    grid-row: 2;
+  }
 }

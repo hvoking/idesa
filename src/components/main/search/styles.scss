@@ -67,3 +67,17 @@
   background-color: rgba(108, 117, 125, 1);
   color: rgba(255, 255, 255, 1);
 }
+@media screen and (max-width: 600px) {
+ .search {
+    grid-template-columns: 15px 2fr 15px;
+  } 
+  .search-wrapper {
+    grid-template-columns: auto min-content min-content;
+  }
+  .search-cta {
+   display: none;
+  }
+  .filter-wrapper {
+    display: none;
+  }
+}

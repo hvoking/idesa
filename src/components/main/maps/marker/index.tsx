@@ -8,7 +8,7 @@ export const CustomMarker = ({ propertyData, propertyInfo, currentId, setCurrent
   const onClick = (e: any, marker: any) => {
     e.stopPropagation();
     setCurrentId(marker.id);
-    propertyInfo && setPropertyInfo(marker); 
+    setPropertyInfo(marker); 
   }
 
   return (
