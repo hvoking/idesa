@@ -1,0 +1,11 @@
+.pictures {
+	display: grid;
+	grid-gap: 16px;
+	height: min-content;
+	padding-top: 5px;
+}
+.pictures-box {
+	border: 2px solid rgba(126, 126, 132, 0.2);
+	padding-left: 15px;
+	padding-right: 15px;
+}

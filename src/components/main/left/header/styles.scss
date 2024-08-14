@@ -1,0 +1,24 @@
+.left-header {
+	display: grid; 
+	grid-gap: 10px; 
+	padding-top: 50px; 
+	padding-bottom: 15px; 
+	border-bottom: 2px solid rgba(126, 126, 132, 0.2);
+}
+.left-header-bottom {
+	display: flex; 
+	justify-content: space-between; 
+	align-items: end;
+}
+.left-title {
+	font-size: 2.4em;
+	font-weight: 500;
+	letter-spacing: 0.8px;
+}
+.left-results {
+	color: rgba(126, 126, 132, 1);
+}
+.left-lotes-disponibles {
+	color: rgba(126, 126, 132, 1);
+	font-style: italic;
+}

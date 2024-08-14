@@ -7,7 +7,7 @@ import { Marker } from 'react-map-gl';
 export const CustomMarker = ({ propertyData, propertyInfo, currentId, setCurrentId, setPropertyInfo }: any) => {
   const onClick = (e: any, marker: any) => {
     e.stopPropagation();
-    setCurrentId(marker.property_id);
+    setCurrentId(marker.id);
     propertyInfo && setPropertyInfo(marker); 
   }
 
@@ -27,8 +27,9 @@ export const CustomMarker = ({ propertyData, propertyInfo, currentId, setCurrent
                 <div 
                   className={currentId === propertyId || currentId === null ? "marker-content-active" : "marker-content"} 
                   onClick={(e: any) => onClick(e, marker)}
+                  style={{display: "grid", alignItems: "center", textAlign: "center", fontSize: "1.4em", fontWeight: "600"}}
                 >
-                  <div style={{textAlign: "center"}}>{propertyId}</div>
+                  {propertyId}
                 </div>
               </div>
             </Marker>

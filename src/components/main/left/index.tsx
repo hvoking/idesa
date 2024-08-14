@@ -1,14 +1,19 @@
 // App imports
+import { Header } from './header';
 import { Sort } from './sort';
-import { Parcels } from './parcels'
+import { List } from './list'
 import './styles.scss';
 
+// Context imports
+import { usePropertyApi } from '../../context/api/property';
+
 export const Left = () => {
+	const { propertyData } = usePropertyApi();
 	return (
 		<div className="left">
-			<div className="left-title">Fracciones</div>
+			<Header propertyData={propertyData}/>
 			<Sort/>
-			<Parcels/>
+			<List/>
 		</div>
 	)
 }
