@@ -28,23 +28,23 @@ export const Sort = () => {
 
 	return (
 			<div className="sort-wrapper">
-					<div>Ordenar por:</div>
-					<div 
-						className="sort-dropdown" 
-						onMouseEnter={() => setSuggestionsActive(true)}
-						onMouseLeave={() => setSuggestionsActive(false)}
-					>
-						<div className="sort-title">
-							<div>{sortKey}</div>
-							<Arrow/>
-						</div>
-						{suggestionsActive && 
-							<Suggestions 
-								suggestions={suggestions} 
-								onClick={onClick}
-							/>
-						}
+				<div>Ordenar por:</div>
+				<div 
+					className="sort-dropdown" 
+					onMouseEnter={() => setSuggestionsActive(true)}
+					onMouseLeave={() => setSuggestionsActive(false)}
+				>
+					<div className="sort-title">
+						<div>{sortKey}</div>
+						<Arrow/>
 					</div>
+					{suggestionsActive && 
+						<Suggestions 
+							suggestions={suggestions} 
+							onClick={onClick}
+						/>
+					}
+				</div>
 			</div>
 	)
 }

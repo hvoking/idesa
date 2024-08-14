@@ -1,6 +1,9 @@
+// App imports
+import './styles.scss';
+
 export const Suggestions = ({ suggestions, onClick }: any) => {
 	return (
-		<ul className="pdf-suggestions" style={{width: "min-content", textAlign: "left", padding: "2px"}}>
+		<ul className="sort-suggestions">
 			{
 				suggestions.map((suggestion: any, index: number) => {
 					return (
