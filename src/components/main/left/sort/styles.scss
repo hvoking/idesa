@@ -1,0 +1,23 @@
+.sort-wrapper {
+  display: grid; 
+  grid-template-columns: min-content min-content; 
+  font-size: 0.8em; 
+  padding: 10px; 
+  padding-left: 0;
+  white-space: nowrap;
+  grid-gap: 5px;
+}
+.sort-dropdown {
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 1);
+}
+.sort-title {
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: auto 10px;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}

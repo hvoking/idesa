@@ -1,7 +1,6 @@
-.pictures-description-wrapper {
+.parcels-wrapper {
 	display: grid;
 	padding-top: 5px;
-	grid-template-columns: auto min-content;
 	grid-gap: 5px;
 	white-space: nowrap;
 	position: relative;
@@ -27,10 +26,4 @@
 	color: rgba(255, 130, 48, 1); 
 	font-weight: 600;
 	font-size: 1.2em;
-}
-.referencia {
-    width: min-content;
-    padding: 5px 10px;
-    color: #fff;
-    background-color: #081245;
 }

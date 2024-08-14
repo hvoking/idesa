@@ -12,10 +12,7 @@ export const Parcels = () => {
 		<div className="pictures">
 			{propertyData.map((item: any, index: any) => {
 				return (
-					<div 
-						key={index} 
-						className="pictures-box"
-					>
+					<div key={index} className="pictures-box">
 						<Description item={item} setCurrentId={setCurrentId} setRejectedIds={setRejectedIds}/>
 					</div>
 				)}

@@ -13,24 +13,25 @@ export const Description = ({ item, setCurrentId, setRejectedIds }: any) => {
 
 	return (
 		<div 
-			className="pictures-description-wrapper"
+			className="parcels-wrapper"
 			onMouseOver={(e: any) => onMouseOver(e, item)}
 			onMouseOut={() => setCurrentId(null)}
 		>
-			<div className="pictures-description">
-				<div className="referencia">
-					{item.id}
+			<div style={{display: "flex", justifyContent: "space-between"}}>
+				<div style={{display: "grid"}}>
+					<div>
+						{item.disponibles} lotes disponibles
+					</div>
+					<div className="description-title">
+						{item.nombre}
+					</div>
 				</div>
-				<div className="description-title">
-					{item.nombre}
-				</div>
-			</div>
-			<div className="values-wrapper">
 				<div style={{textAlign: "center"}}>
 					<div>desde</div>
 					<div className="current-value">{item.desde}</div>
 				</div>
 			</div>
+			<div>{item.id}</div>
 		</div>
 	)
 }
