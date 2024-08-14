@@ -9,10 +9,10 @@ export const List = () => {
 	const { currentId, setCurrentId, propertyData, setRejectedIds } = usePropertyApi();
 
 	return (
-		<div className="pictures">
+		<div className="list-wrapper">
 			{propertyData.map((item: any, index: any) => {
 				return (
-					<div key={index} className="pictures-box">
+					<div key={index} className="list-item">
 						<Description 
 							item={item} 
 							setCurrentId={setCurrentId} 

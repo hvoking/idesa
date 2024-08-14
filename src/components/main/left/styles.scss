@@ -6,7 +6,7 @@
 	overflow-y: scroll;
 	padding-right: 16px;
 	padding-left: 16px;
-	// background-color: rgba(255, 255, 255, 1);
+	background-color: rgba(255, 255, 255, 1);
 }
 .left::-webkit-scrollbar {
   width: 10px;
@@ -18,5 +18,5 @@
 	border-radius: 5px;
 }
 .left::-webkit-scrollbar-thumb:hover {
-    background: rgba(220, 90, 50, 1); /* Darker on hover */
+    background: rgba(220, 90, 50, 1);
 }

@@ -1,0 +1,32 @@
+.description-top {
+	border-bottom: 2px solid rgba(126, 126, 132, 0.2); 
+	padding-bottom: 16px;
+}
+.description-text {
+	display: flex; 
+	justify-content: space-between; 
+	align-items: end;
+}
+.description-title {
+	max-width: 100%; 
+	white-space: pre-wrap; 
+	font-weight: 600; 
+	color: rgba(42, 55, 64, 1);
+	padding-left: 5px;
+}
+.description-available {
+	background-color: rgba(121, 202, 1, 1);
+	color: rgba(255, 255, 255, 1);
+	font-size: 0.8em;
+	padding: 2px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-radius: 12px;
+	width: min-content;
+	transform: translateY(12px)
+}
+.current-value {
+	color: rgba(255, 130, 48, 1); 
+	font-weight: 600;
+	font-size: 1.2em;
+}
