@@ -21,12 +21,23 @@ export const CustomPopup: any = ({ marker, setPropertyInfo }: any) => {
         closeOnMove={true}
         offset={20}
       >
-        <div className="tooltip-wrapper">
-          <div className="card-thumbnail-description">
-            <div><strong>{marker.nombre}</strong></div>
-            <div>{marker.id}</div>
+          <div className="popup-wrapper">
+            <div style={{paddingTop: "20px", borderBottom: "2px solid rgba(126, 126, 132, 0.2)"}}></div>
+            <div>{marker.lugar}</div>
+            <div style={{fontSize: "2.4em", fontWeight: "600"}}>{marker.nombre}</div>
+            <div style={{display: "grid", gridTemplateColumns: "1fr 1fr"}}>
+              <div style={{display: "grid"}}>
+                <div>LOTES</div>
+                <div>{marker.lotes}</div>
+              </div>
+              <div style={{display: "grid"}}>
+                <div>DISPONIBLES</div>
+                <div>{marker.disponibles}</div>
+              </div>
+            </div>
+            <div>DESDE {marker.desde}</div>
+            <div>Ir a la Fracción</div>
           </div>
-        </div>
       </Popup>
     )
 }
