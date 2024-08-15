@@ -6,7 +6,7 @@ export const altos = {
 export const asuncion = {
   latitude: -24.863922871065642,
   longitude: -57.67062735038515,
-  zoom: 6,
+  zoom: 7,
 };
 export const caacupe = {
   latitude: -25.38466,
