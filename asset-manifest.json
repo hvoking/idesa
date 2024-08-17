@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/idesa/static/css/main.6367b278.css",
-    "main.js": "/idesa/static/js/main.c1c3f9a7.js",
+    "main.js": "/idesa/static/js/main.492976a5.js",
     "index.html": "/idesa/index.html",
     "main.6367b278.css.map": "/idesa/static/css/main.6367b278.css.map",
-    "main.c1c3f9a7.js.map": "/idesa/static/js/main.c1c3f9a7.js.map"
+    "main.492976a5.js.map": "/idesa/static/js/main.492976a5.js.map"
   },
   "entrypoints": [
     "static/css/main.6367b278.css",
-    "static/js/main.c1c3f9a7.js"
+    "static/js/main.492976a5.js"
   ]
 }
