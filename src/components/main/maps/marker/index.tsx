@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import './styles.scss';
 
 // Third-party imports
-import { OverlayView } from '@react-google-maps/api';
+import { OverlayView, OverlayViewF } from '@react-google-maps/api';
 
 export const CustomMarker = ({ propertyData, currentId, setCurrentId, setPropertyInfo }: any) => {
   const [ selectedMarker, setSelectedMarker ] = useState<any>(null);
@@ -30,11 +30,14 @@ export const CustomMarker = ({ propertyData, currentId, setCurrentId, setPropert
         const propertyId = marker.id;
 
         return (
-            <OverlayView
+            <OverlayViewF
               key={index}
               position={{ lat: latitude, lng: longitude }}
               mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-              getPixelPositionOffset={(x, y) => getPixelPositionOffset(x, y, {x: -30, y: -15 })}
+              getPixelPositionOffset={(width, height) => ({
+                x: -(width / 2),
+                y: -(height / 2),
+              })}
             >
               <div className="marker-content-wrapper" onClick={(e: any) => onClick(e, marker)}>
                 <div 
@@ -44,7 +47,7 @@ export const CustomMarker = ({ propertyData, currentId, setCurrentId, setPropert
                   {propertyId}
                 </div>
               </div>
-            </OverlayView>
+            </OverlayViewF>
         );
       })}
     </>
