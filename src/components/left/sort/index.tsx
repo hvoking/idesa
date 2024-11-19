@@ -7,11 +7,11 @@ import { Suggestions } from './suggestions';
 import './styles.scss';
 
 // Context imports
-import { usePropertyApi } from '../../../context/api/property';
+import { usePropertyApi } from 'context/api/property';
 
 export const Sort = () => {
 	const [ suggestionsActive, setSuggestionsActive ] = useState(false);
-	const { sortKey, setSortKey, setSortOrder } = usePropertyApi();
+	const { setSortKey, setSortOrder } = usePropertyApi();
 	const [ currentText, setCurrentText ] = useState("Nombre");
 
 	const suggestions = [
@@ -44,7 +44,6 @@ export const Sort = () => {
 		setCurrentText(currentValue);
 		setSortKey(sortOptions[currentValue]);
 		setSortOrder(sortDirections[currentValue]);
-
 	}
 
 	return (

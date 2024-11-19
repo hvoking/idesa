@@ -1,11 +1,8 @@
 // React imports
-import { useState, useRef, useEffect, useContext, createContext } from 'react';
+import { useRef, useEffect, useContext, createContext } from 'react';
 
 // Context imports
 import { useGeo } from '../filters/geo';
-
-// Third-party imports
-import { GoogleMap } from '@react-google-maps/api';
 
 const GoogleMapsContext: React.Context<any> = createContext(null);
 

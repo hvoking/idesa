@@ -12,8 +12,18 @@ export const Top = ({ item }: any) => {
 					{item.nombre.toUpperCase()}
 				</div>
 				<div style={{textAlign: "center"}}>
-					<div style={{display: "grid", justifyItems: "end", color: "rgba(126, 126, 132, 1)"}}>Desde</div>
-					<div className="current-value">{item.desde}</div>
+					<div 
+						style={{
+							display: "grid", 
+							justifyItems: "end", 
+							color: "rgba(126, 126, 132, 1)"
+						}}
+					>
+						Desde
+					</div>
+					<div className="current-value">
+						{item.desde}
+					</div>
 				</div>
 			</div>
 		</div>

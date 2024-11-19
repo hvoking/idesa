@@ -16,7 +16,11 @@ export const Main = () => {
 	return (
 		<div className="wrapper">
 			<div className="header">
-				<img src={process.env.PUBLIC_URL + "/static/logos/idesa.svg"} alt="logo-idesa" height="40px"/>
+				<img 
+					src={process.env.PUBLIC_URL + "/static/logos/idesa.svg"} 
+					alt="logo-idesa" 
+					height="40px"
+				/>
 			</div>
 			<Search/>
 			<div className="main-wrapper">

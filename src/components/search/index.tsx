@@ -10,7 +10,6 @@ import './styles.scss';
 
 // Context imports
 import { useGeo } from '../../context/filters/geo';
-import { useGoogleSearchApi } from '../../context/api/google/search';
 
 export const Search = () => {
 	const { setCityName, Locations, cities, setPlaceCoordinates } = useGeo();
@@ -23,8 +22,10 @@ export const Search = () => {
 	
 	const inputRef = useRef<any>(null);
 
+	const citiesNames = Object.keys(cities);
+
 	const onFocus = () => {
-		setSuggestions(Object.keys(cities));
+		setSuggestions(citiesNames);
 		setSuggestionsActive(true);
 	}
 
@@ -32,7 +33,7 @@ export const Search = () => {
 		const query = e.target.value.toLowerCase();
 		setSearchText(query);
 		if (query.length > 0) {
-			const filterSuggestions: any = Object.keys(cities).filter((suggestion: any) => 
+			const filterSuggestions: any = citiesNames.filter((suggestion: any) => 
 				{
 					const currentSuggestion = suggestion.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
 					return currentSuggestion.indexOf(query) > -1

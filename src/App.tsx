@@ -1,7 +1,9 @@
 // App imports
-import { Main } from './components/main';
-import { MainProvider } from './components/context';
+import { Main } from 'components';
 import './styles.scss';
+
+// Context imports
+import { MainProvider } from 'context';
 
 export const App = () => {
   return (
@@ -12,3 +14,5 @@ export const App = () => {
     </MainProvider>
   );
 }
+
+App.displayName="App";

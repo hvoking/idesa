@@ -3,10 +3,10 @@ import { Description } from './description';
 import './styles.scss';
 
 // Context imports
-import { usePropertyApi } from '../../../context/api/property';
+import { usePropertyApi } from 'context/api/property';
 
 export const List = () => {
-	const { currentId, setCurrentId, propertyData, setRejectedIds, sortKey, sortOrder } = usePropertyApi();
+	const { setCurrentId, propertyData, setRejectedIds, sortKey, sortOrder } = usePropertyApi();
 
 	const extractNumber = (value: string): number => {
 	  // Remove non-numeric characters and convert to number

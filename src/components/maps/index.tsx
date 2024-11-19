@@ -1,23 +1,20 @@
-// React imports
-import { useCallback } from 'react';
-
 // App imports
 import { CustomMarker } from './marker';
 import { CustomPopup } from './popup';
 import './styles.scss';
 
 // Context imports
-import { useGoogleMaps } from '../../context/maps';
-import { useGeo } from '../../context/filters/geo';
-import { usePropertyApi } from '../../context/api/property';
-import { useTooltip } from '../../context/tooltip';
+import { useGoogleMaps } from 'context/maps';
+import { useGeo } from 'context/filters/geo';
+import { usePropertyApi } from 'context/api/property';
+import { useTooltip } from 'context/tooltip';
 
 // Third-party imports
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 export const MapContainer = () => {
   const { mapRef } = useGoogleMaps();
-  const { viewport, setPlaceCoordinates } = useGeo();
+  const { viewport } = useGeo();
   const { propertyData, currentId, setCurrentId } = usePropertyApi();
   const { propertyInfo, setPropertyInfo } = useTooltip();
 

@@ -9,11 +9,15 @@ export const Header = ({ propertyData }: any) => {
 
 	return (
 		<div className="left-header">
-			<div className="left-results">{propertyData.length} resultados</div>
+			<div className="left-results">
+				{propertyData.length} nuevos
+			</div>
 			<div className="left-header-bottom">
-				<div className="left-title">Fracciones</div>
+				<div className="left-title">
+					Desarrollos Inmobiliarios
+				</div>
 				<div className="left-lotes-disponibles">
-					{lotesDisponibles} lotes <br/>
+					{lotesDisponibles} inmuebles <br/>
 					disponibles
 				</div>
 			</div>
